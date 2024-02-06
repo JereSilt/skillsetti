@@ -57,20 +57,16 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Value: {value}</Text>
-    <Slider
-      style={{width: 200, height: 40}}
-      minimumValue={0}
-      maximumValue={10}
-      step={1}
-      value={value}
-      minimumTrackTintColor="#e60d0d"
-      maximumTrackTintColor="#9c17da"
-      onValueChange={(val) => setValue(val)}
-    />
-</View>
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <Text style={styles.header}>Skill set</Text>
+        <View>{items}</View>
+        <Text style={styles.averageHeader}>Average</Text>
+        <Text style={styles.averageValue}>{average}</Text>
+      </ScrollView>
+    </SafeAreaView>
   );
+
 }
 
 const styles = StyleSheet.create({
